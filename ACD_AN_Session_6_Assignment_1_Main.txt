@@ -1,0 +1,55 @@
+a) What is menu. Write its importance.
+
+Menus are the additional options that are displayed by clicking menu button of mobile.
+It display those options that are not directly visible on the main UI of an application.
+It is used to save UI space of an Activity.
+
+-------------------------------------------------------------------------------------
+
+b) What is options menu. When it is activated.
+
+•The options menu is the primary collection of menu items for an activity.
+Options Menu – Activated by clicking MENU key.
+•If you're developing for Android 2.3 or lower, users can reveal the options menu panel by pressing the Menu button.
+•On Android 3.0 and higher, items from the options menu are presented by the action bar as a combination of on-screen action items and overflow options.
+
+Step I : To show options menu when user clicks on MENU button on the device we have to override the implementation of onCreateOptionsMenu() in the Activity class of our application.
+public boolean onCreateOptionsMenu(android.view. Menu menu) {
+super. onCreateOptionsMenu(menu);
+…..
+return true;
+}
+Step II : The options menu may contain icons, submenus and keyboard shortcuts.
+It is used to provide additional options for navigation or configuration.
+To handle menu click or press event we implements onOptionsItemSelected() method of activity.
+public boolean onOptionsItemSelected(android.view. Menu menu) {
+…..
+return true;
+}
+
+-------------------------------------------------------------------------------------
+
+c) What is context menu. When it is activated.
+
+It is a type of Menu that is displayed when the user taps and hold on any view or control.
+
+•It is used to perform some additional operation or action.
+•Different view can have different context menu or same
+
+Step I : We must call registerForContextMenu() method and pass a view for which we want a context menu.
+registerForContextMenu(View v….);
+Step II : To show context menu when the user tap’s and hold on a particular item. We have to override the implementation of onCreateContextMenu() in Activity class of our application.
+@Override public boolean onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuinfo) 
+{
+super.onCreateContextMenu(menu, v, menuinfo);
+……….
+return true; 
+}
+Step III : To handle menu click or press event We have to override the implementation of onContextItemSelected() method of activity.
+@Override public boolean onContextItemSelected(MenuItem item) { super.onContextItemSelected(item); …….
+}
+-------------------------------------------------------------------------------------
+
+d) What is the alternative of ActionBarActivity as its deprecated.
+
+ActionBarActivity is deprecated and could be replaced with its replacement AppCompatActivity:
